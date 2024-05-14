@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#blueLink {
+  text-decoration: none;
+  border-radius: 0px solid black;
+}
+
+#blueLink2 {
+  text-decoration: none;
+}
+
+.millionClass {
+  background-image: url("images/food1.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+.millionClass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(205, 255, 202, 0.7);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.counter {
+  font-size: 70px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.mainImageText {
+  font-size: 70px;
+  font-weight: 600;
+  color: rgb(0, 87, 0);
+  text-shadow: 2px 2px 5px #00000042;
+}
+
+.mainImageText2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: rgb(0, 87, 0);
+}
+
+.bookdonate {
+  background-color: rgb(240, 255, 240);
+}
+
+.bookh2 {
+  font-weight: 550;
+  color: rgb(18, 108, 31);
+}
+
+.part1p {
+  line-height: 2;
+  font-size: 17px;
+}
+
+/* Donate Now button FOOD */
+.text {
+  font-weight: 600;
+  font-size: medium;
+}
+
+.donateNowBtn {
+  border: none;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: linear-gradient(0deg, #3dab33, #0b850b);
+}
+
+.donateNowBtn:hover {
+  border: none;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  background: linear-gradient(0deg, #41b536, #0d9e0d);
+  box-shadow: inset 0px 3px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -2px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.726), 0px 0px 0px 0px #9917ff;
+  transform: translateY(2px);
+}
+
+.donateNowBtn .text {
+  color: white;
+  transform: scale(1.1);
+}
+
+.donateNowBtn .sparkle {
+  fill: white;
+  transform: scale(1.3);
+}
+
+.knowMoreBottomSpace {
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 920px) {
+  .mainImageText {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .mainImageText2 {
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .bookh2 {
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  /* Donate Now button FOOD */
+  .text {
+    font-weight: 500;
+    font-size: small;
+  }
+
+  .donateNowBtn {
+    border: none;
+    width: 11em;
+    height: 4em;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: linear-gradient(0deg, #3dab33, #0b850b);
+  }
+
+  .donateNowBtn:hover {
+    border: none;
+    width: 11em;
+    height: 4em;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    background: linear-gradient(0deg, #41b536, #0d9e0d);
+    box-shadow: inset 0px 3px 0px 0px rgba(255, 255, 255, 0.4),
+      inset 0px -2px 0px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 0px 4px rgba(255, 255, 255, 0.726), 0px 0px 0px 0px #9917ff;
+    transform: translateY(2px);
+  }
+
+  .donateNowBtn .text {
+    color: white;
+    transform: scale(1.3);
+  }
+
+  .donateNowBtn .sparkle {
+    fill: white;
+    transform: scale(1);
+  }
+
+  .knowMoreBottomSpace {
+    padding-top: 30px;
+  }
+}
