@@ -8,7 +8,7 @@
     <!-- Bootstrap link -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!-- CSS Link -->
     <link rel="stylesheet" href="profile.css?v=7">
 
@@ -43,43 +43,43 @@
 
 
 
-    <div class="profile-info col-md-9">
-        <div class="panel">
-            <div class="bio-graph-heading">
-                <h5>“Help others without any reason and give without the expectation of receiving anything in
-                    return.”</h5>
-            </div>
-            <div class="panel-body bio-graph-info my-4">
-                <h1 class="ml-4"><b>Your Profile</b></h1>
-                <div class="row mx-4">
+        <div class="profile-info col-md-9">
+            <div class="panel">
+                <div class="bio-graph-heading">
+                    <h5>“Help others without any reason and give without the expectation of receiving anything in
+                        return.”</h5>
+                </div>
+                <div class="panel-body bio-graph-info my-4">
+                    <h1 class="ml-4"><b>Your Profile</b></h1>
+                    <div class="row mx-4">
 
-                    <div class="bio-row">
-                        <p><span>Full Name </span>:
-                            <?php echo '' . $row['name'] . '' ?>
-                        </p>
-                    </div>
-                    <div class="bio-row">
-                        <p><span>Email </span>:
-                            <?php echo '' . $row['email'] . '' ?>
-                        </p>
-                    </div>
-                    <div class="bio-row">
-                        <p><span>Mobile </span>:
-                            <?php echo '' . $row['phone'] . '' ?>
-                        </p>
-                    </div>
+                        <div class="bio-row">
+                            <p><span>Full Name </span>:
+                                <?php echo '' . $row['name'] . '' ?>
+                            </p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Email </span>:
+                                <?php echo '' . $row['email'] . '' ?>
+                            </p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Mobile </span>:
+                                <?php echo '' . $row['phone'] . '' ?>
+                            </p>
+                        </div>
 
-                    <div class="bio-row">
-                        <p><span>Address </span>:
-                            <?php echo '' . $row['street'] . ', ' . $row['city'] . ', ' . $row['zip_code'] . '' ?>
-                        </p>
+                        <div class="bio-row">
+                            <p><span>Address </span>:
+                                <?php echo '' . $row['street'] . ', ' . $row['city'] . ', ' . $row['zip_code'] . '' ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
     <?php } ?>
     <?php

@@ -37,6 +37,7 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -193,7 +194,7 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>availableBooks</title>
+    <title>AvailableBooks</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="availableBooks.css?v=1">
@@ -35,27 +36,27 @@
         <div class="row">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
             <script>
-            $(document).ready(function() {
-                $("#search").keyup(function() {
-                    var input = $(this).val();
-                    if (input != "") {
-                        $.ajax({
-                            url: "bookSearch.php",
-                            method: "POST",
-                            data: {
-                                input: input
-                            },
+                $(document).ready(function () {
+                    $("#search").keyup(function () {
+                        var input = $(this).val();
+                        if (input != "") {
+                            $.ajax({
+                                url: "bookSearch.php",
+                                method: "POST",
+                                data: {
+                                    input: input
+                                },
 
-                            success: function(data) {
-                                $("#searchr").html(data);
-                            }
-                        });
-                    } else {
-                        $("searchr").css("display", "none");
-                    }
+                                success: function (data) {
+                                    $("#searchr").html(data);
+                                }
+                            });
+                        } else {
+                            $("searchr").css("display", "none");
+                        }
 
+                    });
                 });
-            });
             </script>
             <!-- <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -165,33 +166,33 @@
             </div>
         </div>
         <script>
-        $('#bookModal').on('show.bs.modal', function(event) {
+            $('#bookModal').on('show.bs.modal', function (event) {
 
-        });
+            });
         </script>
         <script>
-        $('#bookModal').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var bookImage = button.closest('.card').find('.card-img-top').attr('src');
-            var bookTitle = button.closest('.card').find('.card-title').text();
-            var bookAuthor = button.closest('.card').find('.card-text').eq(0).text();
-            var bookCourse = button.closest('.card').find('.card-text').eq(1).text();
-            var bookDesc = button.closest('.card').find('.card-text').eq(2).text();
+            $('#bookModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var bookImage = button.closest('.card').find('.card-img-top').attr('src');
+                var bookTitle = button.closest('.card').find('.card-title').text();
+                var bookAuthor = button.closest('.card').find('.card-text').eq(0).text();
+                var bookCourse = button.closest('.card').find('.card-text').eq(1).text();
+                var bookDesc = button.closest('.card').find('.card-text').eq(2).text();
 
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var bookId = button.closest('.card').find('.card-text').eq(3)
-                .text(); // Get the book ID from the card
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var bookId = button.closest('.card').find('.card-text').eq(3)
+                    .text(); // Get the book ID from the card
 
-            // Set the value of the hidden input field
-            $('#bookIdInput').val(bookId);
-            var modal = $(this);
-            modal.find('.modal-body img').attr('src', bookImage);
-            modal.find('.modal-body h5').text(bookTitle);
-            modal.find('.modal-body p').eq(0).text(bookAuthor);
-            modal.find('.modal-body p').eq(1).text(bookCourse);
-            modal.find('.modal-body p').eq(2).text(bookDesc);
-            modal.find('.modal-body input').eq(3).text(bookId);
-        });
+                // Set the value of the hidden input field
+                $('#bookIdInput').val(bookId);
+                var modal = $(this);
+                modal.find('.modal-body img').attr('src', bookImage);
+                modal.find('.modal-body h5').text(bookTitle);
+                modal.find('.modal-body p').eq(0).text(bookAuthor);
+                modal.find('.modal-body p').eq(1).text(bookCourse);
+                modal.find('.modal-body p').eq(2).text(bookDesc);
+                modal.find('.modal-body input').eq(3).text(bookId);
+            });
         </script>
         <!-- Custom Pagination -->
         <ul class="pagination">
@@ -244,9 +245,9 @@
     </script> -->
 
     <script type="text/javascript">
-    document.getElementById("top").onclick = function() {
-        location.href = "requestBook";
-    };
+        document.getElementById("top").onclick = function () {
+            location.href = "requestBook";
+        };
     </script>
     <?php include "footer.php"; ?>
 </body>

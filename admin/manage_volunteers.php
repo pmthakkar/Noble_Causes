@@ -19,7 +19,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="modal.css">
@@ -248,103 +249,103 @@
     <!-- ./wrapper -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var rejectToast = new bootstrap.Toast(document.getElementById('rejectToast'));
-            rejectToast.show();
+    document.addEventListener('DOMContentLoaded', function() {
+        var rejectToast = new bootstrap.Toast(document.getElementById('rejectToast'));
+        rejectToast.show();
 
-            // Close the toast after 3 seconds
-            setTimeout(function () {
-                rejectToast.hide();
-            }, 30000);
-        });
+        // Close the toast after 3 seconds
+        setTimeout(function() {
+            rejectToast.hide();
+        }, 30000);
+    });
     </script>
     <script>
-        approves = document.getElementsByClassName('approve');
-        Array.from(approves).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                v_id = e.target.id.substr(1);
-                v_email = e.target.getAttribute('data-email');
+    approves = document.getElementsByClassName('approve');
+    Array.from(approves).forEach((element) => {
+        element.addEventListener("click", (e) => {
+            v_id = e.target.id.substr(1);
+            v_email = e.target.getAttribute('data-email');
 
-                if (confirm("Are you sure you want to approve this Volunteer?")) {
-                    console.log("yes");
-                    approveVolunteer(v_id, v_email);
-                } else {
-                    console.log("no");
-                }
-            })
+            if (confirm("Are you sure you want to approve this Volunteer?")) {
+                console.log("yes");
+                approveVolunteer(v_id, v_email);
+            } else {
+                console.log("no");
+            }
         })
+    })
 
-        function approveVolunteer(id, email) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "manage_volunteers?approve=" + id + "&email=" + email, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    console.log(xhr.responseText);
-                }
-            };
-            xhr.send();
-        }
+    function approveVolunteer(id, email) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "manage_volunteers?approve=" + id + "&email=" + email, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.send();
+    }
     </script>
     <script>
-        rejects = document.getElementsByClassName('reject');
-        Array.from(rejects).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                v_id = e.target.id.substr(1);
-                v_email = e.target.getAttribute('data-email');
+    rejects = document.getElementsByClassName('reject');
+    Array.from(rejects).forEach((element) => {
+        element.addEventListener("click", (e) => {
+            v_id = e.target.id.substr(1);
+            v_email = e.target.getAttribute('data-email');
 
 
-                if (confirm("Are you sure you want to reject this Volunteer?")) {
-                    console.log("yes");
-                    rejectVolunteer(v_id, v_email);
+            if (confirm("Are you sure you want to reject this Volunteer?")) {
+                console.log("yes");
+                rejectVolunteer(v_id, v_email);
 
-                } else {
-                    console.log("no");
-                }
-            })
+            } else {
+                console.log("no");
+            }
         })
+    })
 
-        function rejectVolunteer(id, email) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "manage_volunteers?reject=" + id + "&email=" + email, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    console.log(xhr.responseText);
-                }
-            };
-            xhr.send();
-        }
+    function rejectVolunteer(id, email) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "manage_volunteers?reject=" + id + "&email=" + email, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.send();
+    }
     </script>
     <script>
-        // Function to show user details in modal
-        function showVolunteerDetails(v_id, v_name, v_phone, v_email, v_gender, v_street, v_city, v_zip) {
-            // Prepare the user details HTML
-            var volunteerDetailsHtml = "<h2>Volunteer Details</h2>" +
-                "<table class='table'>" +
-                "<tr><td><strong>Volunteer ID:</strong></td><td> " + v_id + "</td></tr>" +
-                "<tr><td><strong>Name:</strong></td><td> " + v_name + "</td></tr>" +
-                "<tr><td><strong>Phone:</strong></td><td> " + v_phone + "</td></tr>" +
-                "<tr><td><strong>Email:</strong></td><td> " + v_email + "</td></tr>" +
-                "<tr><td><strong>Gender:</strong></td><td>" + v_gender + "</td></tr>" +
-                "<tr><td><strong>Address:</strong></td><td> " + v_street + "," + v_city + "," + v_zip + "</td></tr>";
-            "</table>";
-            // Display the user details in the modal
-            document.getElementById("volunteerDetails").innerHTML = volunteerDetailsHtml;
+    // Function to show user details in modal
+    function showVolunteerDetails(v_id, v_name, v_phone, v_email, v_gender, v_street, v_city, v_zip) {
+        // Prepare the user details HTML
+        var volunteerDetailsHtml = "<h2>Volunteer Details</h2>" +
+            "<table class='table'>" +
+            "<tr><td><strong>Volunteer ID:</strong></td><td> " + v_id + "</td></tr>" +
+            "<tr><td><strong>Name:</strong></td><td> " + v_name + "</td></tr>" +
+            "<tr><td><strong>Phone:</strong></td><td> " + v_phone + "</td></tr>" +
+            "<tr><td><strong>Email:</strong></td><td> " + v_email + "</td></tr>" +
+            "<tr><td><strong>Gender:</strong></td><td>" + v_gender + "</td></tr>" +
+            "<tr><td><strong>Address:</strong></td><td> " + v_street + "," + v_city + "," + v_zip + "</td></tr>";
+        "</table>";
+        // Display the user details in the modal
+        document.getElementById("volunteerDetails").innerHTML = volunteerDetailsHtml;
 
-            // Show the modal
-            document.getElementById("volunteerModal").style.display = "block";
-        }
+        // Show the modal
+        document.getElementById("volunteerModal").style.display = "block";
+    }
 
-        // Close the modal when the close button is clicked
-        document.getElementsByClassName("close")[0].onclick = function () {
+    // Close the modal when the close button is clicked
+    document.getElementsByClassName("close")[0].onclick = function() {
+        document.getElementById("volunteerModal").style.display = "none";
+    }
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("volunteerModal")) {
             document.getElementById("volunteerModal").style.display = "none";
         }
-
-        // Close the modal when the user clicks outside of it
-        window.onclick = function (event) {
-            if (event.target == document.getElementById("volunteerModal")) {
-                document.getElementById("volunteerModal").style.display = "none";
-            }
-        }
+    }
     </script>
 
     <!-- jQuery -->
@@ -370,23 +371,23 @@
     <script src="dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
         });
+    });
     </script>
 </body>
 

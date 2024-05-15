@@ -19,7 +19,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="modal.css">
@@ -149,63 +150,63 @@
         <!-- /.content-wrapper -->
         <?php include "footer.php"; ?>
         <script>
-        deletes = document.getElementsByClassName('delete');
-        Array.from(deletes).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                user_id = e.target.id.substr(1);
+            deletes = document.getElementsByClassName('delete');
+            Array.from(deletes).forEach((element) => {
+                element.addEventListener("click", (e) => {
+                    user_id = e.target.id.substr(1);
 
-                if (confirm("Are you sure you want to delete this user?")) {
-                    console.log("yes");
-                    window.location = `manage_users.php?delete=${user_id}`;
+                    if (confirm("Are you sure you want to delete this user?")) {
+                        console.log("yes");
+                        window.location = `manage_users.php?delete=${user_id}`;
 
-                } else {
-                    console.log("no");
-                }
+                    } else {
+                        console.log("no");
+                    }
+                })
             })
-        })
         </script>
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
-            deleteToast.show();
+            document.addEventListener('DOMContentLoaded', function () {
+                var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
+                deleteToast.show();
 
-            // Close the toast after 3 seconds
-            setTimeout(function() {
-                deleteToast.hide();
-            }, 30000);
-        });
+                // Close the toast after 3 seconds
+                setTimeout(function () {
+                    deleteToast.hide();
+                }, 30000);
+            });
         </script>
         <script>
-        // Function to show user details in modal
-        function showUserDetails(user_id, name, phone, email, gender, street, city, zip_code) {
-            // Prepare the user details HTML
-            var userDetailsHtml = "<h2>User Details</h2>" +
-                "<table class='table'>" +
-                "<tr><td><strong>User ID:</strong></td><td> " + user_id + "</td></tr>" +
-                "<tr><td><strong>Name:</strong></td><td> " + name + "</td></tr>" +
-                "<tr><td><strong>Phone:</strong></td><td> " + phone + "</td></tr>" +
-                "<tr><td><strong>Email:</strong></td><td> " + email + "</td></tr>" +
-                "<tr><td><strong>Gender:</strong></td><td> " + gender + "</td></tr>" +
-                "<tr><td><strong>Address:</strong></td><td> " + street + "," + city + "," + zip_code + "</td></tr>"
-            "</table>";
-            // Display the user details in the modal
-            document.getElementById("userDetails").innerHTML = userDetailsHtml;
+            // Function to show user details in modal
+            function showUserDetails(user_id, name, phone, email, gender, street, city, zip_code) {
+                // Prepare the user details HTML
+                var userDetailsHtml = "<h2>User Details</h2>" +
+                    "<table class='table'>" +
+                    "<tr><td><strong>User ID:</strong></td><td> " + user_id + "</td></tr>" +
+                    "<tr><td><strong>Name:</strong></td><td> " + name + "</td></tr>" +
+                    "<tr><td><strong>Phone:</strong></td><td> " + phone + "</td></tr>" +
+                    "<tr><td><strong>Email:</strong></td><td> " + email + "</td></tr>" +
+                    "<tr><td><strong>Gender:</strong></td><td> " + gender + "</td></tr>" +
+                    "<tr><td><strong>Address:</strong></td><td> " + street + "," + city + "," + zip_code + "</td></tr>"
+                "</table>";
+                // Display the user details in the modal
+                document.getElementById("userDetails").innerHTML = userDetailsHtml;
 
-            // Show the modal
-            document.getElementById("userModal").style.display = "block";
-        }
+                // Show the modal
+                document.getElementById("userModal").style.display = "block";
+            }
 
-        // Close the modal when the close button is clicked
-        document.getElementsByClassName("close")[0].onclick = function() {
-            document.getElementById("userModal").style.display = "none";
-        }
-
-        // Close the modal when the user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("userModal")) {
+            // Close the modal when the close button is clicked
+            document.getElementsByClassName("close")[0].onclick = function () {
                 document.getElementById("userModal").style.display = "none";
             }
-        }
+
+            // Close the modal when the user clicks outside of it
+            window.onclick = function (event) {
+                if (event.target == document.getElementById("userModal")) {
+                    document.getElementById("userModal").style.display = "none";
+                }
+            }
         </script>
 
         <!-- Control Sidebar -->
@@ -239,23 +240,23 @@
     <script src="dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
 </body>
 

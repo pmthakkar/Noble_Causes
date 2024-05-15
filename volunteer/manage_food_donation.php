@@ -19,7 +19,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="modal.css">
@@ -78,7 +79,7 @@
     if (isset ($_GET["confirm_pickup"])) {
         $food_id = $_GET["confirm_pickup"];
         $u_email = $_GET["email"];
-        
+
         try {
 
 
@@ -262,15 +263,15 @@
 
 
             <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
-                deleteToast.show();
+                document.addEventListener('DOMContentLoaded', function () {
+                    var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
+                    deleteToast.show();
 
-                // Close the toast after 3 seconds
-                setTimeout(function() {
-                    deleteToast.hide();
-                }, 30000);
-            });
+                    // Close the toast after 3 seconds
+                    setTimeout(function () {
+                        deleteToast.hide();
+                    }, 30000);
+                });
             </script>
 
             <!-- /.content-wrapper -->
@@ -283,66 +284,66 @@
         </div>
         <!-- ./wrapper -->
         <script>
-        deletes = document.getElementsByClassName('delete');
-        Array.from(deletes).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                food_id = e.target.id.substr(1);
+            deletes = document.getElementsByClassName('delete');
+            Array.from(deletes).forEach((element) => {
+                element.addEventListener("click", (e) => {
+                    food_id = e.target.id.substr(1);
 
-                if (confirm("Are you sure you want to delete this user?")) {
-                    console.log("yes");
-                    window.location = `manage_food_donation?delete=${food_id}`;
+                    if (confirm("Are you sure you want to delete this user?")) {
+                        console.log("yes");
+                        window.location = `manage_food_donation?delete=${food_id}`;
 
-                } else {
-                    console.log("no");
-                }
+                    } else {
+                        console.log("no");
+                    }
+                })
             })
-        })
         </script>
         <script>
-        collects = document.getElementsByClassName('collect');
-        Array.from(collects).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                food_id = e.target.id.substr(1);
+            collects = document.getElementsByClassName('collect');
+            Array.from(collects).forEach((element) => {
+                element.addEventListener("click", (e) => {
+                    food_id = e.target.id.substr(1);
 
-                if (confirm("Are you sure you want to collect this donation?")) {
-                    console.log("yes");
-                    window.location = `manage_food_donation?collect=${food_id}`;
+                    if (confirm("Are you sure you want to collect this donation?")) {
+                        console.log("yes");
+                        window.location = `manage_food_donation?collect=${food_id}`;
 
-                } else {
-                    console.log("no");
-                }
+                    } else {
+                        console.log("no");
+                    }
+                })
             })
-        })
         </script>
         <script>
-        confirm_pickups = document.getElementsByClassName('confirm_pickup');
-        Array.from(confirm_pickups).forEach((element) => {
-            element.addEventListener("click", (e) => {
-                food_id = e.target.id.substr(1);
-                email = e.target.getAttribute('data-email');
+            confirm_pickups = document.getElementsByClassName('confirm_pickup');
+            Array.from(confirm_pickups).forEach((element) => {
+                element.addEventListener("click", (e) => {
+                    food_id = e.target.id.substr(1);
+                    email = e.target.getAttribute('data-email');
 
 
-                if (confirm("Are you sure you want to confirm_pickup this donation?")) {
-                    console.log("yes");
-                    confirmPickup(food_id, email);
+                    if (confirm("Are you sure you want to confirm_pickup this donation?")) {
+                        console.log("yes");
+                        confirmPickup(food_id, email);
 
-                } else {
-                    console.log("no");
-                }
+                    } else {
+                        console.log("no");
+                    }
+                })
             })
-        })
 
-        function confirmPickup(food_id, email) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "manage_food_donation?confirm_pickup=" + food_id + "&email=" + email, true);
+            function confirmPickup(food_id, email) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "manage_food_donation?confirm_pickup=" + food_id + "&email=" + email, true);
 
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    console.log(xhr.responseText);
-                }
-            };
-            xhr.send();
-        }
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log(xhr.responseText);
+                    }
+                };
+                xhr.send();
+            }
         </script>
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
@@ -366,63 +367,63 @@
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>
         <script>
-        // Function to show user details in modal
-        function showFoodDetails(food_id, name, phone, email, gender, foodname, validity, freq_of_donation, food_type,
-            specifications, street, city,
-            zip_code) {
-            // Prepare the user details HTML
-            var foodDetailsHtml = "<h2>Donation Details</h2>" +
-                "<table class='table'>" +
-                "<tr><td><strong>No:</strong> </td><td>" + food_id + "</td></tr>" +
-                "<tr><td><strong>Donor Name:</strong> </td><td>" + name + "</td></tr>" +
-                "<tr><td><strong>Donor Phone:</strong> </td><td>" + phone + "</td></tr>" +
-                "<tr><td><strong>Donor Email:</strong> </td><td>" + email + "</td></tr>" +
-                "<tr><td><strong>Donor Gender:</strong> </td><td>" + gender + "</td></tr>" +
-                "<tr><td><strong>Food Name:</strong> </td><td>" + foodname + "</td></tr>" +
-                "<tr><td><strong>Food Validity:</strong> </td><td>" + validity + "</td></tr>" +
-                "<tr><td><strong>Frequency Donation:</strong> </td><td>" + freq_of_donation + "</td></tr>" +
-                "<tr><td><strong>Food Type:</strong> </td><td>" + food_type + "</td></tr>" +
-                "<tr><td><strong>Specifications:</strong> </td><td>" + specifications + "</td></tr>" +
-                "<tr><td><strong>Address:</strong> </td><td>" + street + "," + city + "," + zip_code + "</td></tr>"
-            "</table>";
+            // Function to show user details in modal
+            function showFoodDetails(food_id, name, phone, email, gender, foodname, validity, freq_of_donation, food_type,
+                specifications, street, city,
+                zip_code) {
+                // Prepare the user details HTML
+                var foodDetailsHtml = "<h2>Donation Details</h2>" +
+                    "<table class='table'>" +
+                    "<tr><td><strong>No:</strong> </td><td>" + food_id + "</td></tr>" +
+                    "<tr><td><strong>Donor Name:</strong> </td><td>" + name + "</td></tr>" +
+                    "<tr><td><strong>Donor Phone:</strong> </td><td>" + phone + "</td></tr>" +
+                    "<tr><td><strong>Donor Email:</strong> </td><td>" + email + "</td></tr>" +
+                    "<tr><td><strong>Donor Gender:</strong> </td><td>" + gender + "</td></tr>" +
+                    "<tr><td><strong>Food Name:</strong> </td><td>" + foodname + "</td></tr>" +
+                    "<tr><td><strong>Food Validity:</strong> </td><td>" + validity + "</td></tr>" +
+                    "<tr><td><strong>Frequency Donation:</strong> </td><td>" + freq_of_donation + "</td></tr>" +
+                    "<tr><td><strong>Food Type:</strong> </td><td>" + food_type + "</td></tr>" +
+                    "<tr><td><strong>Specifications:</strong> </td><td>" + specifications + "</td></tr>" +
+                    "<tr><td><strong>Address:</strong> </td><td>" + street + "," + city + "," + zip_code + "</td></tr>"
+                "</table>";
 
-            // Display the user details in the modal
-            document.getElementById("foodDetails").innerHTML = foodDetailsHtml;
+                // Display the user details in the modal
+                document.getElementById("foodDetails").innerHTML = foodDetailsHtml;
 
-            // Show the modal
-            document.getElementById("foodModal").style.display = "block";
-        }
+                // Show the modal
+                document.getElementById("foodModal").style.display = "block";
+            }
 
-        // Close the modal when the close button is clicked
-        document.getElementsByClassName("close")[0].onclick = function() {
-            document.getElementById("foodModal").style.display = "none";
-        }
-
-        // Close the modal when the user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("foodModal")) {
+            // Close the modal when the close button is clicked
+            document.getElementsByClassName("close")[0].onclick = function () {
                 document.getElementById("foodModal").style.display = "none";
             }
-        }
+
+            // Close the modal when the user clicks outside of it
+            window.onclick = function (event) {
+                if (event.target == document.getElementById("foodModal")) {
+                    document.getElementById("foodModal").style.display = "none";
+                }
+            }
         </script>
         <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
+            $(function () {
+                $("#example1").DataTable({
+                    "responsive": true,
+                    "lengthChange": false,
+                    "autoWidth": false,
+                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                $('#example2').DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": false,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
             });
-        });
         </script>
         <footer class="main-footer">
             <strong>Copyright &copy; 2024 <a href="https://adminlte.io">P_M_THAKKAR</a>.</strong> All rights

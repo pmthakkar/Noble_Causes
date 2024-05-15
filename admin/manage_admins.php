@@ -22,8 +22,9 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
@@ -198,31 +199,31 @@
 
         <?php include "footer.php"; ?>
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const deletes = document.getElementsByClassName('delete');
-            Array.from(deletes).forEach((element) => {
-                element.addEventListener("click", (e) => {
-                    e.preventDefault(); // Prevents the default action of the anchor tag
-                    const admin_id = e.target.dataset.id;
-                    if (confirm("Are you sure you want to delete this admin?")) {
-                        window.location.href =
-                            `manage_admins.php?delete=${admin_id}`;
-                    }
+            document.addEventListener('DOMContentLoaded', function () {
+                const deletes = document.getElementsByClassName('delete');
+                Array.from(deletes).forEach((element) => {
+                    element.addEventListener("click", (e) => {
+                        e.preventDefault(); // Prevents the default action of the anchor tag
+                        const admin_id = e.target.dataset.id;
+                        if (confirm("Are you sure you want to delete this admin?")) {
+                            window.location.href =
+                                `manage_admins.php?delete=${admin_id}`;
+                        }
+                    });
                 });
             });
-        });
         </script>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
-            deleteToast.show();
+            document.addEventListener('DOMContentLoaded', function () {
+                var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
+                deleteToast.show();
 
-            // Close the toast after 3 seconds
-            setTimeout(function() {
-                deleteToast.hide();
-            }, 30000);
-        });
+                // Close the toast after 3 seconds
+                setTimeout(function () {
+                    deleteToast.hide();
+                }, 30000);
+            });
         </script>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -233,18 +234,18 @@
     <!-- ./wrapper -->
 
     <script>
-    $('.edit').click(function() {
-        var id = $(this).data('id');
-        var name = $(this).data('name');
-        var email = $(this).data('email');
-        // var date = $(this).data('date');     
-        console.log("bhghj", name);
+        $('.edit').click(function () {
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            var email = $(this).data('email');
+            // var date = $(this).data('date');     
+            console.log("bhghj", name);
 
-        $('#idedit').val(id);
-        $('#mname').val(name);
-        $('#memail').val(email);
+            $('#idedit').val(id);
+            $('#mname').val(name);
+            $('#memail').val(email);
 
-    });
+        });
     </script>
 
 
@@ -263,9 +264,9 @@
     <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
     <script src="plugins/jszip/jszip.min.js"></script>
     <script type="text/javascript">
-    document.getElementById("myButton").onclick = function() {
-        location.href = "add_admin";
-    };
+        document.getElementById("myButton").onclick = function () {
+            location.href = "add_admin";
+        };
     </script>
 
     <!-- AdminLTE App -->
@@ -274,24 +275,24 @@
     <script src="dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
 
 
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
 </body>
 

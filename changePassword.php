@@ -8,32 +8,32 @@
     <!-- Bootstrap link -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!-- CSS Link -->
     <link rel="stylesheet" href="profile.css?v=4">
 
-    <title>EditProfile</title>
+    <title>ChangePassword</title>
     <style>
-    /*  CSS for Button (Save changes)  */
+        /*  CSS for Button (Save changes)  */
 
-    .editbtn {
-        justify-items: center;
-        text-align: center;
-    }
+        .editbtn {
+            justify-items: center;
+            text-align: center;
+        }
 
-    .editbtn {
-        background-color: #3e8da8;
-        color: aliceblue;
-        border: none;
-        border-radius: 3px;
-        padding: 2px;
-        /* height: 35px; */
-    }
+        .editbtn {
+            background-color: #3e8da8;
+            color: aliceblue;
+            border: none;
+            border-radius: 3px;
+            padding: 2px;
+            /* height: 35px; */
+        }
 
-    .editbtn:hover {
-        background-color: #55abc8;
-        color: aliceblue;
-    }
+        .editbtn:hover {
+            background-color: #55abc8;
+            color: aliceblue;
+        }
     </style>
 
 </head>
@@ -103,48 +103,48 @@
     $sql = "SELECT * FROM `users` WHERE user_id='$user_id'";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) { ?>
-    <div class="profile-info col-md-9">
-        <div class="panel">
-            <!-- <div class="bio-graph-heading">
+        <div class="profile-info col-md-9">
+            <div class="panel">
+                <!-- <div class="bio-graph-heading">
                         <h5>“Help others without any reason and give without the expectation of receiving anything in
                             return.”</h5>
                     </div> -->
-            <div class="card col-md-12 my-4">
-                <h3 class="mt-3 ml-3">Change Password</h3>
-                <div class="card-body">
-                    <form action="" method="POST">
-                        <div class="row mb-3">
-                            <div class="col-sm-2">
-                                <h6>Current Password:</h6>
+                <div class="card col-md-12 my-4">
+                    <h3 class="mt-3 ml-3">Change Password</h3>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            <div class="row mb-3">
+                                <div class="col-sm-2">
+                                    <h6>Current Password:</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
+                                        name="currentpassword" placeholder="Enter Your Cureent Password"></div>
                             </div>
-                            <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
-                                    name="currentpassword" placeholder="Enter Your Cureent Password"></div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-2">
-                                <h6>New Password:</h6>
+                            <div class="row mb-3">
+                                <div class="col-sm-2">
+                                    <h6>New Password:</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
+                                        name="newpassword" placeholder="Enter New Password"></div>
                             </div>
-                            <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
-                                    name="newpassword" placeholder="Enter New Password"></div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-2">
-                                <h6>Confirm Password:</h6>
+                            <div class="row mb-3">
+                                <div class="col-sm-2">
+                                    <h6>Confirm Password:</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
+                                        name="confirmpassword" placeholder="Enter Confirm Password"></div>
                             </div>
-                            <div class="col-sm-9 text-secondary"> <input type="password" class="form-control"
-                                    name="confirmpassword" placeholder="Enter Confirm Password"></div>
-                        </div>
 
-                        <div class="d-grid gap-2 col-sm-3 mx-auto">
-                            <button class="editbtn " type="submit">Update Password</button>
-                        </div>
-                    </form>
+                            <div class="d-grid gap-2 col-sm-3 mx-auto">
+                                <button class="editbtn " type="submit">Update Password</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
     <?php } ?>
     <?php

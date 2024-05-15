@@ -9,56 +9,57 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!---Custom CSS File--->
     <link rel="stylesheet" href="signUp.css?v=3" />
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('.form');
-            const phoneInput = document.getElementById('phone');
-            const emailInput = document.getElementById('email');
-            const genderInputs = document.querySelectorAll('input[name="gender"]');
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.form');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const genderInputs = document.querySelectorAll('input[name="gender"]');
 
-            form.addEventListener('submit', function (event) {
-                if (!isValidPhone(phoneInput.value)) {
-                    alert('Please enter a valid phone number.');
-                    event.preventDefault();
-                }
-
-                if (!isValidEmail(emailInput.value)) {
-                    alert('Please enter a valid email address.');
-                    event.preventDefault();
-                }
-
-                if (!isGenderSelected(genderInputs)) {
-                    alert('Please select a gender.');
-                    event.preventDefault();
-                }
-            });
-
-            function isValidPhone(phone) {
-                // Simple phone number validation, you can customize it based on your requirements
-                const phoneRegex = /^\d{10}$/; // Assuming a 10-digit phone number
-                return phoneRegex.test(phone);
+        form.addEventListener('submit', function(event) {
+            if (!isValidPhone(phoneInput.value)) {
+                alert('Please enter a valid phone number.');
+                event.preventDefault();
             }
 
-            function isValidEmail(email) {
-                // Simple email validation, you can use a more robust regex for better validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
+            if (!isValidEmail(emailInput.value)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
             }
 
-            function isGenderSelected(genderInputs) {
-                for (let i = 0; i < genderInputs.length; i++) {
-                    if (genderInputs[i].checked) {
-                        return true;
-                    }
-                }
-                return false;
+            if (!isGenderSelected(genderInputs)) {
+                alert('Please select a gender.');
+                event.preventDefault();
             }
         });
+
+        function isValidPhone(phone) {
+            // Simple phone number validation, you can customize it based on your requirements
+            const phoneRegex = /^\d{10}$/; // Assuming a 10-digit phone number
+            return phoneRegex.test(phone);
+        }
+
+        function isValidEmail(email) {
+            // Simple email validation, you can use a more robust regex for better validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isGenderSelected(genderInputs) {
+            for (let i = 0; i < genderInputs.length; i++) {
+                if (genderInputs[i].checked) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    });
     </script>
 
 

@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <title>BookDonateForm</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="donateform.css?v=2" />
 
 </head>
@@ -134,7 +136,8 @@
             <div class="column">
                 <div class="input-box">
                     <label><i class="fa fa-calendar" aria-hidden="true"></i> Pickup Date</label>
-                    <input type="date" name="date" placeholder="Pickup Date" required />
+                    <input type="date" name="date" placeholder="Pickup Date" min="<?php echo date('Y-m-d'); ?>"
+                        required />
                 </div>
                 <div class="image-box">
                     <label><i class="fa fa-picture-o" aria-hidden="true"></i> Upload Book Image</label>

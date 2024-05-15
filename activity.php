@@ -12,39 +12,40 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!-- CSS Link -->
     <link rel="stylesheet" href="profile.css">
     <style>
-        .book-card img {
-            width: 100%;
-            height: 230px;
-            object-fit: fill;
+    .book-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: fill;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .table-author,
+        .author {
+            display: none;
         }
 
-        .card {
-            margin-top: 20px;
+        .table-course,
+        .course {
+            display: none;
         }
 
-        @media screen and (max-width: 480px) {
-
-            .table-author,
-            .author {
-                display: none;
-            }
-
-            .table-course,
-            .course {
-                display: none;
-            }
-
-            .type {
-                display: none;
-            }
+        .table-type {
+            display: none;
         }
+    }
     </style>
-    <title>User Activity</title>
+    <title>My Donations</title>
 </head>
 
 <body>
@@ -72,24 +73,24 @@
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_assoc($result)) { ?>
 
-        <div class="profile-info col-md-9">
-            <div class="panel">
+    <div class="profile-info col-md-9">
+        <div class="panel">
 
-                <h4 class="text-center mt-2">Book Donations</h4>
-                <table class="table">
+            <h4 class="text-center mt-2">Book Donations</h4>
+            <table class="table">
 
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th class="author">Author</th>
-                            <th class="course">Course</th>
-                            <th class="description" style="display: none">desciption</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th class="author">Author</th>
+                        <th class="course">Course</th>
+                        <th class="description" style="display: none">desciption</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                         $user_id = $_SESSION['user_id'];
                         $sql = "SELECT * FROM donate_book WHERE user_id = $user_id";
                         $result = $conn->query($sql);
@@ -165,26 +166,26 @@
             </div>
 
             <script>
-                $('#bookModal').on('show.bs.modal', function (event) {
+            $('#bookModal').on('show.bs.modal', function(event) {
 
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var bookImage = button.closest('.details').find('.table-image').attr('src');
-                    var bookTitle = button.closest('.details').find('.table-title').text();
-                    var bookAuthor = button.closest('.details').find('.table-author').text();
-                    var bookCourse = button.closest('.details').find('.table-course').text();
-                    var bookDesc = button.closest('.details').find('.table-description').text();
-                    var bookStatus = button.closest('.details').find('.table-status').text();
-                    var bookDate = button.closest('.details').find('.table-time').text();
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var bookImage = button.closest('.details').find('.table-image').attr('src');
+                var bookTitle = button.closest('.details').find('.table-title').text();
+                var bookAuthor = button.closest('.details').find('.table-author').text();
+                var bookCourse = button.closest('.details').find('.table-course').text();
+                var bookDesc = button.closest('.details').find('.table-description').text();
+                var bookStatus = button.closest('.details').find('.table-status').text();
+                var bookDate = button.closest('.details').find('.table-time').text();
 
-                    var modal = $(this);
-                    modal.find('.modal-body img').attr('src', bookImage);
-                    modal.find('.modal-body .modal-title').text(bookTitle);
-                    modal.find('.modal-body .modal-author').text(bookAuthor);
-                    modal.find('.modal-body .modal-course').text(bookCourse);
-                    modal.find('.modal-body .modal-desc').text(bookDesc);
-                    modal.find('.modal-body .modal-status').text(bookStatus);
-                    modal.find('.modal-body .modal-time').text(bookDate);
-                });
+                var modal = $(this);
+                modal.find('.modal-body img').attr('src', bookImage);
+                modal.find('.modal-body .modal-title').text(bookTitle);
+                modal.find('.modal-body .modal-author').text(bookAuthor);
+                modal.find('.modal-body .modal-course').text(bookCourse);
+                modal.find('.modal-body .modal-desc').text(bookDesc);
+                modal.find('.modal-body .modal-status').text(bookStatus);
+                modal.find('.modal-body .modal-time').text(bookDate);
+            });
             </script>
 
 
@@ -195,7 +196,7 @@
                     <tr>
                         <th>Food Name</th>
                         <th>Frequency</th>
-                        <th class="type">Type</th>
+                        <th class="table-type">Type</th>
                         <th>Validity</th>
                         <th>Status</th>
                         <th style="display: none">Date</th>
@@ -276,26 +277,26 @@
             </div>
 
             <script>
-                $('#foodModal').on('show.bs.modal', function (event) {
+            $('#foodModal').on('show.bs.modal', function(event) {
 
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var foodName = button.closest('.fdetails').find('.table-name').text();
-                    var foodFrequency = button.closest('.fdetails').find('.table-frequency').text();
-                    var foodType = button.closest('.fdetails').find('.table-type').text();
-                    var foodValidity = button.closest('.fdetails').find('.table-validity').text();
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var foodName = button.closest('.fdetails').find('.table-name').text();
+                var foodFrequency = button.closest('.fdetails').find('.table-frequency').text();
+                var foodType = button.closest('.fdetails').find('.table-type').text();
+                var foodValidity = button.closest('.fdetails').find('.table-validity').text();
 
-                    var foodStatus = button.closest('.fdetails').find('.table-fstatus').text();
-                    var foodDate = button.closest('.fdetails').find('.table-ftime').text();
+                var foodStatus = button.closest('.fdetails').find('.table-fstatus').text();
+                var foodDate = button.closest('.fdetails').find('.table-ftime').text();
 
-                    var modal = $(this);
+                var modal = $(this);
 
-                    modal.find('.modal-body .modal-name').text(foodName);
-                    modal.find('.modal-body .modal-frequency').text(foodFrequency);
-                    modal.find('.modal-body .modal-type').text(foodType);
-                    modal.find('.modal-body .modal-validity').text(foodValidity);
-                    modal.find('.modal-body .modal-fstatus').text(foodStatus);
-                    modal.find('.modal-body .modal-ftime').text(foodDate);
-                });
+                modal.find('.modal-body .modal-name').text(foodName);
+                modal.find('.modal-body .modal-frequency').text(foodFrequency);
+                modal.find('.modal-body .modal-type').text(foodType);
+                modal.find('.modal-body .modal-validity').text(foodValidity);
+                modal.find('.modal-body .modal-fstatus').text(foodStatus);
+                modal.find('.modal-body .modal-ftime').text(foodDate);
+            });
             </script>
 
 

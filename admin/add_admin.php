@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- Theme style -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -19,43 +19,43 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <?php
-            session_start();
-            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-                
-            }else{
-                header("Location:../login.php");
-            }
-            ?>
-<?php 
-        require ("../connection.php");
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-$admin_name = $_POST['name'];
-$admin_email = $_POST['email'];
-$admin_password = $_POST['password'];
-$confirm_pass = $_POST["confirm_pass"];
-if ($admin_password == $confirm_pass) {
-    $hash = password_hash($admin_password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO `admin` (`admin_name`,  `admin_email`, `admin_password`) VALUES ('$admin_name', '$admin_email', '$hash')";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        // User successfully registered, show toaster message and redirect
-        echo '<script>
+session_start();
+if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+} else {
+    header("Location:../login.php");
+}
+?>
+<?php
+require ("../connection.php");
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $admin_name = $_POST['name'];
+    $admin_email = $_POST['email'];
+    $admin_password = $_POST['password'];
+    $confirm_pass = $_POST["confirm_pass"];
+    if ($admin_password == $confirm_pass) {
+        $hash = password_hash($admin_password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `admin` (`admin_name`,  `admin_email`, `admin_password`) VALUES ('$admin_name', '$admin_email', '$hash')";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            // User successfully registered, show toaster message and redirect
+            echo '<script>
                 alert("Registration successful.");
                 window.location.href = "manage_admins";
               </script>';
-        exit(); // Make sure to exit to prevent further execution of the PHP code
-    } else {
-        // Registration failed, you can handle this case accordingly
-        echo '<script>
+            exit(); // Make sure to exit to prevent further execution of the PHP code
+        } else {
+            // Registration failed, you can handle this case accordingly
+            echo '<script>
                 alert("Registration failed. Please try again.");
               </script>';
+        }
     }
 }
-}
-        ?>
+?>
 
 <body class="hold-transition sidebar-mini">
-    <?php include("navbar.php"); ?>
+    <?php include ("navbar.php"); ?>
     <div class="wrapper">
         <!-- Navbar -->
 

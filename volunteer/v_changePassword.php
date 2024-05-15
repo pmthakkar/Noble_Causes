@@ -33,27 +33,27 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <style>
-    .editbtn {
-        justify-items: center;
-        text-align: center;
-    }
+        .editbtn {
+            justify-items: center;
+            text-align: center;
+        }
 
-    .editbtn {
-        background-color: #3e8da8;
-        color: aliceblue;
-        border: none;
-        border-radius: 3px;
-        height: 35px;
-    }
+        .editbtn {
+            background-color: #3e8da8;
+            color: aliceblue;
+            border: none;
+            border-radius: 3px;
+            height: 35px;
+        }
 
-    .editbtn:hover {
-        background-color: #55abc8;
-        color: aliceblue;
-    }
+        .editbtn:hover {
+            background-color: #55abc8;
+            color: aliceblue;
+        }
     </style>
 </head>
 
@@ -129,46 +129,46 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     $sql = "SELECT * FROM `volunteers` WHERE v_id='$v_id'";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="profile-info col-md-12">
-                        <div class="panel">
+                        <div class="profile-info col-md-12">
+                            <div class="panel">
 
-                            <div class="card col-md-12 my-4">
+                                <div class="card col-md-12 my-4">
 
-                                <div class="card-body">
-                                    <form action="" method="POST">
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Current Password:</h6>
+                                    <div class="card-body">
+                                        <form action="" method="POST">
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Current Password:</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="password"
+                                                        class="form-control" name="currentpassword"
+                                                        placeholder="Enter Your Cureent Password"></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="password"
-                                                    class="form-control" name="currentpassword"
-                                                    placeholder="Enter Your Cureent Password"></div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>New Password:</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>New Password:</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="password"
+                                                        class="form-control" name="newpassword"
+                                                        placeholder="Enter New Password"></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="password"
-                                                    class="form-control" name="newpassword"
-                                                    placeholder="Enter New Password"></div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Confirm Password:</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Confirm Password:</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="password"
+                                                        class="form-control" name="confirmpassword"
+                                                        placeholder="Enter Confirm Password"></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="password"
-                                                    class="form-control" name="confirmpassword"
-                                                    placeholder="Enter Confirm Password"></div>
-                                        </div>
 
-                                        <div class="d-grid gap-2 col-sm-3 mx-auto">
-                                            <button class="editbtn " type="submit">Update Password</button>
-                                        </div>
-                                    </form>
+                                            <div class="d-grid gap-2 col-sm-3 mx-auto">
+                                                <button class="editbtn " type="submit">Update Password</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php } ?>
 
                 </div>

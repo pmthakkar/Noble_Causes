@@ -19,7 +19,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="modal.css">
@@ -240,15 +241,15 @@
 
 
             <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
-                    deleteToast.show();
+            document.addEventListener('DOMContentLoaded', function() {
+                var deleteToast = new bootstrap.Toast(document.getElementById('deleteToast'));
+                deleteToast.show();
 
-                    // Close the toast after 3 seconds
-                    setTimeout(function () {
-                        deleteToast.hide();
-                    }, 30000);
-                });
+                // Close the toast after 3 seconds
+                setTimeout(function() {
+                    deleteToast.hide();
+                }, 30000);
+            });
             </script>
 
             <!-- /.content-wrapper -->
@@ -261,64 +262,64 @@
         </div>
         <!-- ./wrapper -->
         <script>
-            rejects = document.getElementsByClassName('reject');
-            Array.from(rejects).forEach((element) => {
-                element.addEventListener("click", (e) => {
-                    book_id = e.target.id.substr(1);
+        rejects = document.getElementsByClassName('reject');
+        Array.from(rejects).forEach((element) => {
+            element.addEventListener("click", (e) => {
+                book_id = e.target.id.substr(1);
 
-                    if (confirm("Are you sure you want to reject to this user?")) {
-                        console.log("yes");
-                        window.location = `manage_book_applications?reject=${book_id}`;
+                if (confirm("Are you sure you want to reject to this user?")) {
+                    console.log("yes");
+                    window.location = `manage_book_applications?reject=${book_id}`;
 
-                    } else {
-                        console.log("no");
-                    }
-                })
+                } else {
+                    console.log("no");
+                }
             })
+        })
         </script>
         <script>
-            delivers = document.getElementsByClassName('deliver');
-            Array.from(delivers).forEach((element) => {
-                element.addEventListener("click", (e) => {
-                    book_id = e.target.id.substr(1);
+        delivers = document.getElementsByClassName('deliver');
+        Array.from(delivers).forEach((element) => {
+            element.addEventListener("click", (e) => {
+                book_id = e.target.id.substr(1);
 
-                    if (confirm("Are you sure you want to deliver to this user?")) {
-                        console.log("yes");
-                        window.location = `manage_book_applications?deliver=${book_id}`;
+                if (confirm("Are you sure you want to deliver to this user?")) {
+                    console.log("yes");
+                    window.location = `manage_book_applications?deliver=${book_id}`;
 
-                    } else {
-                        console.log("no");
-                    }
-                })
+                } else {
+                    console.log("no");
+                }
             })
+        })
         </script>
         <script>
-            approves = document.getElementsByClassName('approve');
-            Array.from(approves).forEach((element) => {
-                element.addEventListener("click", (e) => {
-                    email = e.target.getAttribute('data-email');
-                    book_id = e.target.id.substr(1);
+        approves = document.getElementsByClassName('approve');
+        Array.from(approves).forEach((element) => {
+            element.addEventListener("click", (e) => {
+                email = e.target.getAttribute('data-email');
+                book_id = e.target.id.substr(1);
 
-                    if (confirm("Are you sure you want to approve this donation?")) {
-                        confirmDelivery(book_id, email);
+                if (confirm("Are you sure you want to approve this donation?")) {
+                    confirmDelivery(book_id, email);
 
-                    } else {
-                        console.log("no");
-                    }
-                })
+                } else {
+                    console.log("no");
+                }
             })
+        })
 
-            function confirmDelivery(book_id, email) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "manage_book_applications?approve=" + book_id + "&email=" + email, true);
+        function confirmDelivery(book_id, email) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "manage_book_applications?approve=" + book_id + "&email=" + email, true);
 
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        console.log(xhr.responseText);
-                    }
-                };
-                xhr.send();
-            }
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
         </script>
 
         <!-- jQuery -->
@@ -343,61 +344,61 @@
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>
         <script>
-            // Function to show user details in modal
-            function showBookDetails(book_id, name, phone, email, gender, title, author, course, description, street, city,
-                zip_code) {
-                // Prepare the user details HTML
-                var bookDetailsHtml = "<h2>Book Details</h2>" +
-                    "<table class='table'>" +
-                    "<tr><td><strong>No:</strong></td><td>" + book_id + "</td></tr>" +
-                    "<tr><td><strong>Applicant Name:</strong></td><td>" + name + "</td></tr>" +
-                    "<tr><td><strong>Applicant Phone:</strong></td><td>" + phone + "</td></tr>" +
-                    "<tr><td><strong>Applicant Email:</strong></td><td>" + email + "</td></tr>" +
-                    "<tr><td><strong>Applicant Gender:</strong></td><td>" + gender + "</td></tr>" +
-                    "<tr><td><strong>Book Title:</strong></td><td>" + title + "</td></tr>" +
-                    "<tr><td><strong>Book Author:</strong></td><td>" + author + "</td></tr>" +
-                    "<tr><td><strong>Book Course:</strong></td><td>" + course + "</td></tr>" +
-                    "<tr><td><strong>Book Description:</strong></td><td>" + description + "</td></tr>" +
-                    "<tr><td><strong>Address:</strong></td><td>" + street + ", " + city + ", " + zip_code + "</td></tr>" +
-                    "</table>";
+        // Function to show user details in modal
+        function showBookDetails(book_id, name, phone, email, gender, title, author, course, description, street, city,
+            zip_code) {
+            // Prepare the user details HTML
+            var bookDetailsHtml = "<h2>Book Details</h2>" +
+                "<table class='table'>" +
+                "<tr><td><strong>No:</strong></td><td>" + book_id + "</td></tr>" +
+                "<tr><td><strong>Applicant Name:</strong></td><td>" + name + "</td></tr>" +
+                "<tr><td><strong>Applicant Phone:</strong></td><td>" + phone + "</td></tr>" +
+                "<tr><td><strong>Applicant Email:</strong></td><td>" + email + "</td></tr>" +
+                "<tr><td><strong>Applicant Gender:</strong></td><td>" + gender + "</td></tr>" +
+                "<tr><td><strong>Book Title:</strong></td><td>" + title + "</td></tr>" +
+                "<tr><td><strong>Book Author:</strong></td><td>" + author + "</td></tr>" +
+                "<tr><td><strong>Book Course:</strong></td><td>" + course + "</td></tr>" +
+                "<tr><td><strong>Book Description:</strong></td><td>" + description + "</td></tr>" +
+                "<tr><td><strong>Address:</strong></td><td>" + street + ", " + city + ", " + zip_code + "</td></tr>" +
+                "</table>";
 
-                // Display the user details in the modal
-                document.getElementById("bookDetails").innerHTML = bookDetailsHtml;
+            // Display the user details in the modal
+            document.getElementById("bookDetails").innerHTML = bookDetailsHtml;
 
-                // Show the modal
-                document.getElementById("bookModal").style.display = "block";
-            }
+            // Show the modal
+            document.getElementById("bookModal").style.display = "block";
+        }
 
-            // Close the modal when the close button is clicked
-            document.getElementsByClassName("close")[0].onclick = function () {
+        // Close the modal when the close button is clicked
+        document.getElementsByClassName("close")[0].onclick = function() {
+            document.getElementById("bookModal").style.display = "none";
+        }
+
+        // Close the modal when the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("bookModal")) {
                 document.getElementById("bookModal").style.display = "none";
             }
-
-            // Close the modal when the user clicks outside of it
-            window.onclick = function (event) {
-                if (event.target == document.getElementById("bookModal")) {
-                    document.getElementById("bookModal").style.display = "none";
-                }
-            }
+        }
         </script>
         <script>
-            $(function () {
-                $("#example1").DataTable({
-                    "responsive": true,
-                    "lengthChange": false,
-                    "autoWidth": false,
-                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-                }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
             });
+        });
         </script>
         <footer class="main-footer">
             <strong>Copyright &copy; 2024 <a href="https://adminlte.io">P_M_THAKKAR</a>.</strong> All rights

@@ -36,24 +36,25 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <style>
-    .editbtn {
-        justify-items: center;
-        text-align: center;
-    }
+        .editbtn {
+            justify-items: center;
+            text-align: center;
+        }
 
-    .editbtn {
-        background-color: #3e8da8;
-        color: aliceblue;
-        border: none;
-        border-radius: 3px;
-        height: 35px;
-    }
+        .editbtn {
+            background-color: #3e8da8;
+            color: aliceblue;
+            border: none;
+            border-radius: 3px;
+            height: 35px;
+        }
 
-    .editbtn:hover {
-        background-color: #55abc8;
-        color: aliceblue;
-    }
+        .editbtn:hover {
+            background-color: #55abc8;
+            color: aliceblue;
+        }
     </style>
 </head>
 
@@ -112,69 +113,69 @@ if (isset ($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     while ($row = mysqli_fetch_assoc($d_result)) { ?>
 
 
-                    <div class="profile-info col-md-12">
-                        <div class="panel">
-                            <div class="card col-md-12 my-4">
+                        <div class="profile-info col-md-12">
+                            <div class="panel">
+                                <div class="card col-md-12 my-4">
 
-                                <div class="card-body">
-                                    <form action="" method="POST">
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Full Name</h6>
+                                    <div class="card-body">
+                                        <form action="" method="POST">
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Full Name</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="text"
+                                                        class="form-control" name="nameEdit"
+                                                        value='<?php echo '' . $row['v_name'] . '' ?>'></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="text"
-                                                    class="form-control" name="nameEdit"
-                                                    value='<?php echo '' . $row['v_name'] . '' ?>'></div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Email</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Email</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="text"
+                                                        class="form-control" name="emailEdit"
+                                                        value='<?php echo '' . $row['v_email'] . '' ?>'></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="text"
-                                                    class="form-control" name="emailEdit"
-                                                    value='<?php echo '' . $row['v_email'] . '' ?>'></div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Phone</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Phone</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary"> <input type="text"
+                                                        class="form-control" name="phoneEdit"
+                                                        value='<?php echo '' . $row['v_phone'] . '' ?>'></div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> <input type="text"
-                                                    class="form-control" name="phoneEdit"
-                                                    value='<?php echo '' . $row['v_phone'] . '' ?>'></div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Street</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Street</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" name="streetEdit" class="form-control"
+                                                        value='<?php echo '' . $row['v_street'] . '' ?>'>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" name="streetEdit" class="form-control"
-                                                    value='<?php echo '' . $row['v_street'] . '' ?>'>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>City</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" name="cityEdit" class="form-control"
+                                                        value='<?php echo '' . $row['v_city'] . '' ?>'>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>City</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-sm-2">
+                                                    <h6>Zip Code</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" name="zip_codeEdit" class="form-control"
+                                                        value='<?php echo '' . $row['v_zip'] . '' ?>'>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" name="cityEdit" class="form-control"
-                                                    value='<?php echo '' . $row['v_city'] . '' ?>'>
+                                            <div class="d-grid gap-2 col-sm-3 mx-auto">
+                                                <button class="editbtn col-sm-12" type="submit">Save Changes</button>
                                             </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-2">
-                                                <h6>Zip Code</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" name="zip_codeEdit" class="form-control"
-                                                    value='<?php echo '' . $row['v_zip'] . '' ?>'>
-                                            </div>
-                                        </div>
-                                        <div class="d-grid gap-2 col-sm-3 mx-auto">
-                                            <button class="editbtn col-sm-12" type="submit">Save Changes</button>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
 
                             <?php } ?>
 

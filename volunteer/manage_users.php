@@ -18,6 +18,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -141,36 +142,36 @@
     <!-- ./wrapper -->
 
     <script>
-    // Function to show user details in modal
-    function showUserDetails(user_id, name, phone, email, gender, street, city, zip_code) {
-        // Prepare the user details HTML
-        var userDetailsHtml = "<h2>User Details</h2>" +
-            "<table class='table'>" +
-            "<tr><td><strong>User ID:</strong></td><td> " + user_id + "</td></tr>" +
-            "<tr><td><strong>Name:</strong></td><td> " + name + "</td></tr>" +
-            "<tr><td><strong>Phone:</strong></td><td> " + phone + "</td></tr>" +
-            "<tr><td><strong>Email:</strong></td><td> " + email + "</td></tr>" +
-            "<tr><td><strong>Gender:</strong></td><td> " + gender + "</td></tr>" +
-            "<tr><td><strong>Address:</strong></td><td> " + street + "," + city + "," + zip_code + "</td></tr>"
-        "</table>";
-        // Display the user details in the modal
-        document.getElementById("userDetails").innerHTML = userDetailsHtml;
+        // Function to show user details in modal
+        function showUserDetails(user_id, name, phone, email, gender, street, city, zip_code) {
+            // Prepare the user details HTML
+            var userDetailsHtml = "<h2>User Details</h2>" +
+                "<table class='table'>" +
+                "<tr><td><strong>User ID:</strong></td><td> " + user_id + "</td></tr>" +
+                "<tr><td><strong>Name:</strong></td><td> " + name + "</td></tr>" +
+                "<tr><td><strong>Phone:</strong></td><td> " + phone + "</td></tr>" +
+                "<tr><td><strong>Email:</strong></td><td> " + email + "</td></tr>" +
+                "<tr><td><strong>Gender:</strong></td><td> " + gender + "</td></tr>" +
+                "<tr><td><strong>Address:</strong></td><td> " + street + "," + city + "," + zip_code + "</td></tr>"
+            "</table>";
+            // Display the user details in the modal
+            document.getElementById("userDetails").innerHTML = userDetailsHtml;
 
-        // Show the modal
-        document.getElementById("userModal").style.display = "block";
-    }
+            // Show the modal
+            document.getElementById("userModal").style.display = "block";
+        }
 
-    // Close the modal when the close button is clicked
-    document.getElementsByClassName("close")[0].onclick = function() {
-        document.getElementById("userModal").style.display = "none";
-    }
-
-    // Close the modal when the user clicks outside of it
-    window.onclick = function(event) {
-        if (event.target == document.getElementById("userModal")) {
+        // Close the modal when the close button is clicked
+        document.getElementsByClassName("close")[0].onclick = function () {
             document.getElementById("userModal").style.display = "none";
         }
-    }
+
+        // Close the modal when the user clicks outside of it
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("userModal")) {
+                document.getElementById("userModal").style.display = "none";
+            }
+        }
     </script>
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
@@ -195,23 +196,23 @@
     <script src="dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
 </body>
 

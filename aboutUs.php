@@ -10,8 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
-
+    </script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="about.css?v=2">
 
     <title>about us</title>
@@ -138,15 +138,15 @@
 
 
     <script type="text/javascript">
-        document.getElementById("myButton").onclick = function () {
-            location.href = "food";
-        };
-        document.getElementById("myButton2").onclick = function () {
-            location.href = "education";
-        };
-        document.getElementById("myButton3").onclick = function () {
-            location.href = "volunteeruser";
-        };
+    document.getElementById("myButton").onclick = function() {
+        location.href = "food";
+    };
+    document.getElementById("myButton2").onclick = function() {
+        location.href = "education";
+    };
+    document.getElementById("myButton3").onclick = function() {
+        location.href = "volunteeruser";
+    };
     </script>
 
 

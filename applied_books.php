@@ -14,6 +14,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <!-- CSS Link -->
     <link rel="stylesheet" href="profile.css">
     <style>
@@ -41,7 +42,7 @@
             }
         }
     </style>
-    <title>User Activity</title>
+    <title>Applied Books</title>
 </head>
 
 <body>
